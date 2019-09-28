@@ -93,7 +93,7 @@ CREATE SEQUENCE public.id_station_seq;
 
 CREATE TABLE public.station (
     id_station INTEGER NOT NULL DEFAULT nextval('public.id_station_seq'),
-    nom INTEGER NOT NULL,
+    nom VARCHAR NOT NULL,
     CONSTRAINT id_station PRIMARY KEY (id_station)
 );
 
@@ -146,7 +146,6 @@ CREATE SEQUENCE public.id_ticket_seq;
 CREATE TABLE public.ticket (
     id_ticket INTEGER NOT NULL DEFAULT nextval('public.id_ticket_seq'),
     id_programmation INTEGER NOT NULL,
-    id_client INTEGER NOT NULL,
     prix NUMERIC NOT NULL,
     id_commande INTEGER NOT NULL,
     CONSTRAINT id_ticket PRIMARY KEY (id_ticket)

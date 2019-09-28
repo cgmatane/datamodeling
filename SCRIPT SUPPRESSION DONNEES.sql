@@ -1,63 +1,22 @@
-DELETE FROM
-public.commande
-WHERE id_commande = 2
+DELETE FROM public.commande WHERE True;
+DELETE FROM public.navire WHERE True;
+DELETE FROM public.station WHERE True;
+DELETE FROM public.trajet WHERE True;
+DELETE FROM public.programmation WHERE True;
+DELETE FROM public.acheteur WHERE True;
+DELETE FROM public.passager WHERE True;
+DELETE FROM public.vehicule WHERE True;
+DELETE FROM public.type_vehicule WHERE True;
+DELETE FROM public.ticket WHERE True;
 
-DELETE FROM
-public.commande
-WHERE id_commande = 1
 
-DELETE FROM
-public.passager
-WHERE id_passager = 3
-
-DELETE FROM
-public.passager
-WHERE id_passager = 2
-
-DELETE FROM
-public.passager
-WHERE id_passager = 1
-
-DELETE FROM
-public.acheteur
-WHERE id_acheteur = 2
-
-DELETE FROM
-public.acheteur
-WHERE id_acheteur = 1
-
-DELETE FROM
-public.programmation
-WHERE id_programmation = 2
-
-DELETE FROM
-public.programmation
-WHERE id_programmation = 1
-
-DELETE FROM
-public.trajet
-WHERE id_trajet = 2
-
-DELETE FROM
-public.trajet
-WHERE id_trajet = 1
-
-DELETE FROM
-public.station
-WHERE nom = 3
-
-DELETE FROM
-public.station
-WHERE nom = 2
-
-DELETE FROM
-public.station
-WHERE nom = 1
-
-DELETE FROM
-public.navire
-WHERE nom = 'FA-GAUTHIER'
-
-DELETE FROM
-public.navire
-WHERE nom = 'SS-TEST'
+ALTER SEQUENCE id_commande_seq RESTART WITH 1;
+ALTER SEQUENCE id_navire_seq RESTART WITH 1;
+ALTER SEQUENCE id_station_seq RESTART WITH 1;
+ALTER SEQUENCE id_trajet_seq RESTART WITH 1;
+ALTER SEQUENCE id_programmation_seq RESTART WITH 1;
+ALTER SEQUENCE id_acheteur_seq RESTART WITH 1;
+ALTER SEQUENCE id_passager_seq RESTART WITH 1;
+ALTER SEQUENCE id_vehicule_seq RESTART WITH 1;
+ALTER SEQUENCE id_type_vehicule_seq RESTART WITH 1;
+ALTER SEQUENCE id_ticket_seq RESTART WITH 1;
