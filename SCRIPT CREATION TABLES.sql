@@ -131,8 +131,8 @@ CREATE SEQUENCE public.id_programmation_seq;
 CREATE TABLE public.programmation (
     id_programmation INTEGER NOT NULL DEFAULT nextval('public.id_programmation_seq'),
     id_trajet INTEGER NOT NULL,
-    date_arrivee DATE NOT NULL,
-    date_arrivee_1 DATE NOT NULL,
+    date_depart TIMESTAMP NOT NULL,
+    date_arrivee TIMESTAMP NOT NULL,
     nom VARCHAR NOT NULL,
     annulation BOOLEAN NOT NULL,
     CONSTRAINT id_programmation PRIMARY KEY (id_programmation)
