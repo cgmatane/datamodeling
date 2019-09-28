@@ -23,11 +23,11 @@ INSERT INTO public.trajet (id_station_depart, id_station_arrivee, id_navire)
   VALUES (3 , 2 , 1);
 
 
-INSERT INTO public.programmation (id_trajet, date_arrivee, date_depart, nom, annulation)
-  VALUES (1 , '2019-10-12' , '2019-10-11 15:30:00' , 'Baie-Comeau Matane', False);
+INSERT INTO public.programmation (id_trajet, date_depart, date_arrivee, nom, annulation)
+  VALUES (1, '2019-10-11 15:30:00', '2019-10-12 08:00:00', 'Baie-Comeau Matane', False);
 
-INSERT INTO public.programmation (id_trajet, date_arrivee, date_depart, nom, annulation)
-  VALUES (2, '2019-10-14', '2019-10-14 11:00:00', 'Godbout Baie-Comeau', False);
+INSERT INTO public.programmation (id_trajet, date_depart, date_arrivee, nom, annulation)
+  VALUES (2, '2019-10-14 11:00:00', '2019-10-14 17:00:00', 'Godbout Baie-Comeau', False);
 
 
 INSERT INTO public.passager (nom, prenom, date_naissance)
