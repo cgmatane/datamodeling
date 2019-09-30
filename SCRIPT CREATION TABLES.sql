@@ -1,3 +1,14 @@
+DROP TABLE IF EXISTS ticket;
+DROP TABLE IF EXISTS programmation;
+DROP TABLE IF EXISTS trajet;
+DROP TABLE IF EXISTS navire;
+DROP TABLE IF EXISTS station;
+DROP TABLE IF EXISTS commande;
+DROP TABLE IF EXISTS vehicule;
+DROP TABLE IF EXISTS type_vehicule;
+DROP TABLE IF EXISTS passager;
+DROP TABLE IF EXISTS acheteur;
+
 DROP SEQUENCE IF EXISTS id_ticket_seq;
 DROP SEQUENCE IF EXISTS id_programmation_seq;
 DROP SEQUENCE IF EXISTS id_trajet_seq;
@@ -9,17 +20,6 @@ DROP SEQUENCE IF EXISTS id_type_vehicule_seq;
 DROP SEQUENCE IF EXISTS id_acheteur_seq;
 DROP SEQUENCE IF EXISTS id_passager_seq;
 
-DROP TABLE IF EXISTS ticket;
-DROP TABLE IF EXISTS programmation;
-DROP TABLE IF EXISTS trajet;
-DROP TABLE IF EXISTS navire;
-DROP TABLE IF EXISTS station;
-DROP TABLE IF EXISTS commande;
-DROP TABLE IF EXISTS vehicule;
-DROP TABLE IF EXISTS type_vehicule;
-DROP TABLE IF EXISTS acheteur;
-DROP TABLE IF EXISTS passager;
-
 CREATE SEQUENCE public.id_passager_seq;
 
 CREATE TABLE public.passager (
@@ -27,6 +27,7 @@ CREATE TABLE public.passager (
     nom VARCHAR NOT NULL,
     prenom VARCHAR NOT NULL,
     date_naissance DATE NOT NULL,
+    id_acheteur INTEGER NOT NULL,
     CONSTRAINT id_passager PRIMARY KEY (id_passager)
 );
 
@@ -39,7 +40,6 @@ CREATE TABLE public.acheteur (
     id_acheteur INTEGER NOT NULL DEFAULT nextval('public.id_acheteur_seq'),
     telephone NUMERIC,
     mail VARCHAR,
-    id_passager INTEGER NOT NULL,
     CONSTRAINT id_acheteur PRIMARY KEY (id_acheteur)
 );
 
@@ -154,9 +154,9 @@ CREATE TABLE public.ticket (
 
 ALTER SEQUENCE public.id_ticket_seq OWNED BY public.ticket.id_ticket;
 
-ALTER TABLE public.acheteur ADD CONSTRAINT passager_acheteur_fk
-FOREIGN KEY (id_passager)
-REFERENCES public.passager (id_passager)
+ALTER TABLE public.passager ADD CONSTRAINT acheteur_passager_fk
+FOREIGN KEY (id_acheteur)
+REFERENCES public.acheteur (id_acheteur)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 NOT DEFERRABLE;
