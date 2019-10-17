@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS vehicule;
 DROP TABLE IF EXISTS type_vehicule;
 DROP TABLE IF EXISTS passager;
 DROP TABLE IF EXISTS acheteur;
+DROP TABLE IF EXISTS users;
 
 DROP SEQUENCE IF EXISTS id_ticket_seq;
 DROP SEQUENCE IF EXISTS id_programmation_seq;
@@ -19,6 +20,7 @@ DROP SEQUENCE IF EXISTS id_vehicule_seq;
 DROP SEQUENCE IF EXISTS id_type_vehicule_seq;
 DROP SEQUENCE IF EXISTS id_acheteur_seq;
 DROP SEQUENCE IF EXISTS id_passager_seq;
+DROP SEQUENCE IF EXISTS users_id_seq;
 
 CREATE SEQUENCE public.id_passager_seq;
 
@@ -151,8 +153,29 @@ CREATE TABLE public.ticket (
     CONSTRAINT id_ticket PRIMARY KEY (id_ticket)
 );
 
-
 ALTER SEQUENCE public.id_ticket_seq OWNED BY public.ticket.id_ticket;
+
+
+CREATE TABLE public.users
+(
+    id bigint NOT NULL DEFAULT nextval('users_id_seq'::regclass),
+    name character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    email character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    email_verified_at timestamp(0) without time zone,
+    password character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    remember_token character varying(100) COLLATE pg_catalog."default",
+    created_at timestamp(0) without time zone,
+    updated_at timestamp(0) without time zone,
+    CONSTRAINT users_pkey PRIMARY KEY (id),
+    CONSTRAINT users_email_unique UNIQUE (email)
+
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
+
 
 ALTER TABLE public.passager ADD CONSTRAINT acheteur_passager_fk
 FOREIGN KEY (id_acheteur)

@@ -77,3 +77,6 @@ INSERT INTO public.ticket(id_programmation, prix, id_commande)
 
 INSERT INTO public.ticket(id_programmation, prix, id_commande)
   VALUES(2, 300, 2);
+
+INSERT INTO public.users(id, name, email, email_verified_at, password, remember_token, created_at,updated_at)
+  VALUES(1,'Mr. Trever Cole V','kirk.stark@example.net','2019-10-04 21:18:52', '$2y$10$cyWC4h5YU0QPYlidcGzjZ.gkI41RRklwD23XgGGhmDTjEzaqxQtae', 'hwHQnxo9Gt', '2019-10-04 21:18:53', '2019-10-04 21:18:53' );
