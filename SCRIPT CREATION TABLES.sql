@@ -1,3 +1,4 @@
+
 DROP TABLE IF EXISTS ticket;
 DROP TABLE IF EXISTS programmation;
 DROP TABLE IF EXISTS trajet;
@@ -155,6 +156,7 @@ CREATE TABLE public.ticket (
 
 ALTER SEQUENCE public.id_ticket_seq OWNED BY public.ticket.id_ticket;
 
+CREATE SEQUENCE public.users_id_seq;
 
 CREATE TABLE public.users
 (
