@@ -5,7 +5,7 @@
 -- Dumped from database version 10.10
 -- Dumped by pg_dump version 10.10
 
--- Started on 2019-11-06 11:00:37
+-- Started on 2019-11-07 00:01:35
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -88,8 +88,6 @@ CREATE TABLE public.passager (
     nom character varying NOT NULL,
     prenom character varying NOT NULL,
     date_naissance date NOT NULL,
-    telephone numeric,
-    mail character varying(250),
     id_ticket integer
 );
 
@@ -169,7 +167,9 @@ CREATE TABLE public.ticket (
     qrcode character varying(7) NOT NULL,
     date_achat date NOT NULL,
     nombre_bagage integer,
-    nombre_animal integer
+    nombre_animal integer,
+    telephone numeric,
+    mail character varying(250)
 );
 
 
@@ -581,7 +581,7 @@ ALTER TABLE ONLY public.vehicule
 ALTER DEFAULT PRIVILEGES FOR ROLE postgres GRANT ALL ON TABLES  TO admin_user;
 
 
--- Completed on 2019-11-06 11:00:38
+-- Completed on 2019-11-07 00:01:35
 
 --
 -- PostgreSQL database dump complete

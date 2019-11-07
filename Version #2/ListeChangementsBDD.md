@@ -8,7 +8,7 @@
 
 ..* Suppression de la colonne "id_commande" dans la table "ticket"
 
-..* Fusion de la table "acheteur" avec "passager" (passager contient maintenant tous les champs qui étaient propre à acheteur)
+..* Abolition de la table "acheteur" ("passagers" contient tout ce qu'il faut pour n'importe quel passager et les coordonnées de l'acheteur sont maintenant sur "ticket")
 
 ..* Suppression de la colonne "id_acheteur" dans la table "passager"
 
