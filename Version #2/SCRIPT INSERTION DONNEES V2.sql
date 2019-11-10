@@ -13,17 +13,18 @@ INSERT INTO public.station (nom)
 INSERT INTO public.station (nom)
   VALUES ('Godbout');
 
-INSERT INTO public.ticket(id_trajet, prix, qrcode, date_achat, nombre_bagage, nombre_animal, telephone, mail)
-  VALUES(1, 300, 'AHEIFBG', '2019-10-10' , 0 , 1, 4187456680, 'troisdeuxun@haha.com');
-
-INSERT INTO public.ticket(id_trajet, prix, qrcode, date_achat, nombre_bagage, nombre_animal, telephone, mail)
-  VALUES(2, 300, 'UGJANGT' , '2019-10-12' , 10 , 0 , 2, 4185551982, 'undeuxtrois@haha.com');
   
 INSERT INTO public.trajet (id_station_depart, id_station_arrivee, id_navire, date_depart, date_arrivee, nom, annulation)
   VALUES (2, 3 , 1, '2019-10-11 15:30:00', '2019-10-12 08:00:00', 'Baie-Comeau Matane', False);
 
 INSERT INTO public.trajet (id_station_depart, id_station_arrivee, id_navire, date_depart, date_arrivee, nom, annulation)
   VALUES (3 , 2 , 1, '2019-10-14 11:00:00', '2019-10-14 17:00:00', 'Godbout Baie-Comeau', False);
+
+INSERT INTO public.ticket(id_trajet, prix, qrcode, date_achat, nombre_bagage, nombre_animal, telephone, mail)
+  VALUES(1, 300, 'AHEIFBG', '2019-10-10' , 0 , 1, 4187456680, 'troisdeuxun@haha.com');
+
+INSERT INTO public.ticket(id_trajet, prix, qrcode, date_achat, nombre_bagage, nombre_animal, telephone, mail)
+  VALUES(2, 300, 'UGJANGT' , '2019-10-12' , 0 , 2, 4185551982, 'undeuxtrois@haha.com');
 
 INSERT INTO public.type_vehicule (nom, prix_type_vehicule)
   VALUES ('Voiture', 80);
