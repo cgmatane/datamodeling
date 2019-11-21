@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"billeterie.type_vehicule"}],"uuid":"a26b924af5be40bb81b9c8f2774613df"}
