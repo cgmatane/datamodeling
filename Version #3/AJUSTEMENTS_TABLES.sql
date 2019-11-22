@@ -24,7 +24,7 @@ ALTER TABLE public.intervalle_age
 
 INSERT INTO public.intervalle_age(age_min, age_max, tarif) VALUES (0,17,1500);
 INSERT INTO public.intervalle_age(age_min, age_max, tarif) VALUES (18,60,4000);
-INSERT INTO public.intervalle_age(age_min, age_max, tarif) VALUES (61,999,35);
+INSERT INTO public.intervalle_age(age_min, age_max, tarif) VALUES (61,999,3500);
 
 ALTER TABLE public.ticket DROP COLUMN nombre_bagage;
 ALTER TABLE public.ticket DROP COLUMN nombre_animal;
