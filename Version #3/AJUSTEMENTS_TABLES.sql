@@ -28,6 +28,7 @@ INSERT INTO public.intervalle_age(age_min, age_max, tarif) VALUES (61,999,3500);
 
 ALTER TABLE public.ticket DROP COLUMN nombre_bagage;
 ALTER TABLE public.ticket DROP COLUMN nombre_animal;
+ALTER TABLE public.passager DROP COLUMN date_naissance;
 
 ALTER TABLE public.ticket ADD COLUMN numero_facture integer;
 ALTER TABLE public.ticket ADD COLUMN commentaires varchar;
