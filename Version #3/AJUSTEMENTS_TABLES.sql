@@ -44,4 +44,8 @@ ALTER TABLE public.passager ADD COLUMN id_intervalle_age integer;
 UPDATE public.passager SET id_intervalle_age = 1 WHERE True;
 ALTER TABLE public.passager ALTER COLUMN id_intervalle_age SET NOT NULL;
 
+ALTER TABLE public.vehicule ADD COLUMN poids_eleve boolean;
+UPDATE public.vehicule SET poids_eleve = False WHERE True;
+ALTER TABLE public.vehicule ALTER COLUMN poids_eleve SET NOT NULL;
+
 ALTER TABLE ONLY public.passager ADD CONSTRAINT intervalle_age_passager_fk FOREIGN KEY (id_intervalle_age) REFERENCES public.intervalle_age(id_intervalle_age) ON UPDATE CASCADE ON DELETE CASCADE;
