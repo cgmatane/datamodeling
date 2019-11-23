@@ -22,9 +22,9 @@ TABLESPACE pg_default;
 ALTER TABLE public.intervalle_age
     OWNER to postgres;
 
-INSERT INTO public.intervalle_age(age_min, age_max, tarif) VALUES (0,17,1500);
-INSERT INTO public.intervalle_age(age_min, age_max, tarif) VALUES (18,60,4000);
-INSERT INTO public.intervalle_age(age_min, age_max, tarif) VALUES (61,999,3500);
+INSERT INTO public.intervalle_age(age_min, age_max, tarif) VALUES (0,17,15.00);
+INSERT INTO public.intervalle_age(age_min, age_max, tarif) VALUES (18,60,40.00);
+INSERT INTO public.intervalle_age(age_min, age_max, tarif) VALUES (61,999,35.00);
 
 ALTER TABLE public.ticket DROP COLUMN nombre_bagage;
 ALTER TABLE public.ticket DROP COLUMN nombre_animal;
@@ -39,6 +39,7 @@ ALTER TABLE public.ticket ALTER COLUMN numero_facture SET NOT NULL;
 ALTER TABLE public.ticket ALTER COLUMN commentaires SET NOT NULL;
 
 ALTER TABLE public.type_vehicule RENAME COLUMN prix_type_vehicule TO tarif;
+ALTER TABLE public.type_vehicule ALTER COLUMN tarif TYPE NUMERIC(6,2);
 
 ALTER TABLE public.passager ADD COLUMN id_intervalle_age integer;
 UPDATE public.passager SET id_intervalle_age = 1 WHERE True;
