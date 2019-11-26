@@ -33,10 +33,13 @@ ALTER TABLE public.vehicule DROP COLUMN modele;
 
 ALTER TABLE public.ticket ADD COLUMN numero_facture integer;
 ALTER TABLE public.ticket ADD COLUMN commentaires varchar;
+ALTER TABLE public.ticket ADD COLUMN langue integer;
 UPDATE public.ticket SET numero_facture = 0 WHERE True;
 UPDATE public.ticket SET commentaires = 'N/A' WHERE True;
+UPDATE public.ticket SET langue = 0 WHERE True;
 ALTER TABLE public.ticket ALTER COLUMN numero_facture SET NOT NULL;
 ALTER TABLE public.ticket ALTER COLUMN commentaires SET NOT NULL;
+ALTER TABLE public.ticket ALTER COLUMN langue SET NOT NULL;
 
 ALTER TABLE public.type_vehicule RENAME COLUMN prix_type_vehicule TO tarif;
 ALTER TABLE public.type_vehicule ALTER COLUMN tarif TYPE NUMERIC(6,2);
