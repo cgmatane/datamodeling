@@ -9,7 +9,7 @@ CREATE TABLE scan (
 	relation_passagers text,
 	relation_vehicule text
 	
-)
+); -- dédicace à Antoine Richard
 
 INSERT INTO public.scan(
 	id_scan, id_ticket, id_trajet, qr_code, date_achat, telephone, commentaires, relation_passagers, relation_vehicule)
