@@ -1,0 +1,52 @@
+DELETE FROM intervalle_age WHERE TRUE;
+DELETE FROM navire WHERE TRUE;
+DELETE FROM passager WHERE TRUE;
+DELETE FROM scan WHERE TRUE;
+DELETE FROM station WHERE TRUE;
+DELETE FROM ticket WHERE TRUE;
+DELETE FROM trajet WHERE TRUE;
+DELETE FROM type_vehicule WHERE TRUE;
+DELETE FROM vehicule WHERE TRUE;
+
+ALTER SEQUENCE id_intervalle_age_seq RESTART WITH 1;
+ALTER SEQUENCE id_navire_seq RESTART WITH 1;
+ALTER SEQUENCE id_passager_seq RESTART WITH 1;
+ALTER SEQUENCE id_station_seq RESTART WITH 1;
+ALTER SEQUENCE id_ticket_seq RESTART WITH 1;
+ALTER SEQUENCE id_trajet_seq RESTART WITH 1;
+ALTER SEQUENCE id_type_vehicule_seq RESTART WITH 1;
+ALTER SEQUENCE id_vehicule_seq RESTART WITH 1;
+
+INSERT INTO public.scan(
+	id_scan, id_ticket, id_trajet, qr_code, date_achat, telephone, commentaires, relation_passagers, relation_vehicule)
+	VALUES (1, null, null, '', '', '', '', '{}', '{}');
+  
+  INSERT INTO public.navire (id_navire, nom, nombre_place_pieton, nombre_place_vehicule)
+  VALUES (1, 'SS-TEST' , 500 , 180);
+
+INSERT INTO public.navire (id_navire, nom, nombre_place_pieton, nombre_place_vehicule)
+  VALUES (2 ,'FA-GAUTHIER' , 500 , 180);
+
+INSERT INTO public.station (id_station, nom)
+  VALUES (1, 'Matane');
+
+INSERT INTO public.station (id_station, nom)
+ VALUES (2, 'Baie-Comeau');
+
+INSERT INTO public.station (id_station, nom)
+  VALUES (3, 'Godbout');
+
+INSERT INTO public.type_vehicule (nom, tarif)
+  VALUES ('Voiture', 80);
+
+INSERT INTO public.type_vehicule (nom, tarif)
+  VALUES ('Voiture avec remorque', 150);
+
+INSERT INTO public.type_vehicule (nom, tarif)
+  VALUES ('Camionette', 100);
+
+INSERT INTO public.type_vehicule (nom, tarif)
+  VALUES ('Poids lourd', 130);
+
+INSERT INTO public.users(id, name, email, email_verified_at, password, remember_token, created_at,updated_at)
+  VALUES(1,'Mr. Trever Cole V','kirk.stark@example.net','2019-10-04 21:18:52', '$2y$10$cyWC4h5YU0QPYlidcGzjZ.gkI41RRklwD23XgGGhmDTjEzaqxQtae', 'hwHQnxo9Gt', '2019-10-04 21:18:53', '2019-10-04 21:18:53' );
